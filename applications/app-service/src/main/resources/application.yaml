@@ -1,0 +1,29 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: "assignee-management"
+  devtools:
+    add-properties: false
+  profiles:
+    include: null
+  datasource:
+    url: jdbc:postgresql://localhost:5432/help-center
+    username: postgres
+    password: postgres
+    driverClassName: org.postgresql.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,prometheus"
+  endpoint:
+    health:
+      probes:
+        enabled: true
+cors:
+  allowed-origins: "http://localhost:4200,http://localhost:8080"
