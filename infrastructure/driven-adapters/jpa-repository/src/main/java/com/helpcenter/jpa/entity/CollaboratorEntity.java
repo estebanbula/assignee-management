@@ -19,7 +19,7 @@ import java.util.Date;
 public class CollaboratorEntity extends WorkerEntity {
 
     @Column(name = "service_provide")
-    private String serviceProvide;
+    private String serviceProvided;
     @Column(name = "retired_at")
     private Date retiredAt;
     @Column(name = "service_value")
