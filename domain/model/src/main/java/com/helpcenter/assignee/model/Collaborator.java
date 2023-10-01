@@ -14,7 +14,7 @@ import java.util.Date;
 @NoArgsConstructor
 public class Collaborator extends Worker {
 
-    private String serviceProvide;
+    private String serviceProvided;
     private Date retiredAt;
     private Integer serviceValue;
     private String currency;
@@ -22,7 +22,7 @@ public class Collaborator extends Worker {
     @Builder(builderMethodName = "collaboratorAssigneeBuilder")
     public Collaborator(String assigneeId, String name, String email, String documentType, Integer documentNumber, Company company, String serviceProvider, Date retiredAt, Integer serviceValue, String currency) {
         super(assigneeId, name, email, documentType, documentNumber, company);
-        this.serviceProvide = serviceProvider;
+        this.serviceProvided = serviceProvider;
         this.retiredAt = retiredAt;
         this.serviceValue = serviceValue;
         this.currency = currency;
