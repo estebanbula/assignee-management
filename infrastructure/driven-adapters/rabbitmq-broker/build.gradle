@@ -1,5 +1,6 @@
 dependencies {
     implementation project(':model')
     implementation 'org.springframework:spring-context'
+    implementation 'org.reactivecommons.utils:object-mapper:0.1.0'
     implementation "org.springframework.boot:spring-boot-starter-amqp:${springBootStarterAmqpVersion}"
 }

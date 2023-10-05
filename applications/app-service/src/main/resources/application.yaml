@@ -15,7 +15,15 @@ spring:
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: "create"
+      ddl-auto: "none"
+
+adapters:
+  rabbitmq:
+    host: "localhost"
+    port: 5672
+    username: "guest"
+    password: "guest"
+
 management:
   endpoints:
     web:
