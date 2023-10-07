@@ -6,6 +6,7 @@ import com.helpcenter.assignee.model.Collaborator;
 import com.helpcenter.assignee.model.Employee;
 import com.helpcenter.assignee.model.Worker;
 import com.helpcenter.assignee.response.AssigneesResponse;
+import com.helpcenter.assignee.response.SimpleAssigneeResponse;
 import com.helpcenter.events.gateway.IEventGateway;
 import com.helpcenter.events.model.Event;
 import lombok.RequiredArgsConstructor;
@@ -65,5 +66,15 @@ public class AssigneeUseCase {
                 .message("Assignee list updated")
                 .assignees(this.retrieveAssignees())
                 .build();
+    }
+
+    public SimpleAssigneeResponse assigneeById(String email) {
+        return null; /* assigneeRepository.assigneeById(email)
+                .map(assignee -> {
+                    return new SimpleAssigneeResponse().toBuilder()
+                            .fullName(assignee.getName())
+                            .build();
+                })
+                .orElseThrow();*/
     }
 }

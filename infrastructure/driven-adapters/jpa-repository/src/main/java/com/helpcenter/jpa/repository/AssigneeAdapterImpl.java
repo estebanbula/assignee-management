@@ -15,7 +15,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Component
 @RequiredArgsConstructor
@@ -25,6 +24,7 @@ public class AssigneeAdapterImpl implements IAssignee {
     private final BranchRepository branchRepository;
     private final CollaboratorRepository collaboratorRepository;
     private final EmployeeRepository employeeRepository;
+    private final AssigneeRepository assigneeRepository;
     private final ModelMapper modelMapper;
 
     @Override
@@ -75,4 +75,10 @@ public class AssigneeAdapterImpl implements IAssignee {
                 .map(savedWorker -> modelMapper.map(savedWorker, Employee.class))
                 .orElseThrow();
     }
+
+    /*@Override
+    public Optional<Assignee> assigneeById(String email) {
+        return Optional.of(assigneeRepository.findByEmail(email))
+                .map(assignee -> modelMapper.map(assignee, Assignee.class));
+    }*/
 }

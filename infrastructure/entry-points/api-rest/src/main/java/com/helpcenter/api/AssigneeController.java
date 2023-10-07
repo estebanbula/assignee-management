@@ -4,12 +4,14 @@ import com.helpcenter.assignee.model.Branch;
 import com.helpcenter.assignee.model.Collaborator;
 import com.helpcenter.assignee.model.Employee;
 import com.helpcenter.assignee.response.AssigneesResponse;
+import com.helpcenter.assignee.response.SimpleAssigneeResponse;
 import com.helpcenter.usecase.AssigneeUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,6 +45,12 @@ public class AssigneeController {
     @GetMapping("/list")
     public ResponseEntity<AssigneesResponse> getAssignees() {
         return new ResponseEntity<>(assigneeUseCase.retrieveAssignees(),
+                HttpStatus.OK);
+    }
+
+    @GetMapping
+    public ResponseEntity<SimpleAssigneeResponse> getAssigneeById(@PathVariable("id") String id) {
+        return new ResponseEntity<>(assigneeUseCase.assigneeById(id),
                 HttpStatus.OK);
     }
 }

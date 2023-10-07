@@ -2,9 +2,7 @@ package com.helpcenter.jpa.repository;
 
 import com.helpcenter.assignee.gateway.ICompany;
 import com.helpcenter.assignee.model.Company;
-import com.helpcenter.assignee.model.Worker;
 import com.helpcenter.jpa.entity.CompanyEntity;
-import com.helpcenter.jpa.entity.WorkerEntity;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
