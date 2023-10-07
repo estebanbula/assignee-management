@@ -68,13 +68,8 @@ public class AssigneeUseCase {
                 .build();
     }
 
-    public SimpleAssigneeResponse assigneeById(String email) {
-        return null; /* assigneeRepository.assigneeById(email)
-                .map(assignee -> {
-                    return new SimpleAssigneeResponse().toBuilder()
-                            .fullName(assignee.getName())
-                            .build();
-                })
-                .orElseThrow();*/
+    public SimpleAssigneeResponse assigneeById(Integer id) {
+        return assigneeRepository.assigneeById(id)
+                .orElseThrow();
     }
 }

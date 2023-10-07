@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder(toBuilder = true)
 public class SimpleAssigneeResponse {
 
+    private String assigneeId;
     private String fullName;
     private String email;
     private String company;
